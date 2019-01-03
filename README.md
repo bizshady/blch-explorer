@@ -1,4 +1,4 @@
-## Blur Network Block Explorer features
+## Blurrycash Block Explorer features
 
 The key features of the Blur Network Block Explorer are:
 
@@ -25,13 +25,13 @@ The key features of the Blur Network Block Explorer are:
 
 ## Compilation on Ubuntu
 
-##### Compile latest BLUR development version
+##### Compile latest Blurrycash development version
 
 Download and compile recent Blur source  into your home folder:
 
 
 ```bash
-# first install blur dependecines
+# first install blurrycash dependecines
 sudo apt update
 
 sudo apt-get install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev
@@ -39,19 +39,16 @@ sudo apt-get install git build-essential cmake libboost-all-dev miniupnpc libunb
 # go to home folder
 cd ~
 
-git clone --recursive https://github.com/blur-network/blur
+git clone --recursive https://github.com/bizshady/blurrycash
 
-cd blur
-
-# checkout last blur version
-git checkout -b last_release v0.1.1
+cd blurrycash
 
 cmake . && make 
 ```
 
 ##### Compile and run the explorer
 
-Once the Blur is compiled, the explorer can be downloaded and compiled
+Once Blurrycash is compiled, the explorer can be downloaded and compiled
 as follows:
 
 ```bash
@@ -59,10 +56,10 @@ as follows:
 cd ~
 
 # download the source code
-git clone https://github.com/blur-network/blur-explorer.git
+git clone https://github.com/bizshady/blch-explorer.git
 
 # enter the downloaded sourced code folder
-cd blur-explorer
+cd blch-explorer
 
 # make a build folder and enter it
 mkdir build && cd build
@@ -70,8 +67,8 @@ mkdir build && cd build
 # create the makefile
 cmake ..
 
-# altearnatively can use: cmake -DMONERO_DIR=/path/to/blur_folder ..
-# if blur is not in ~/blur
+# altearnatively can use: cmake -DMONERO_DIR=/path/to/blurrycash_folder ..
+# if blur is not in ~/blurrycash
 #
 # also can build with ASAN (sanitizers), for example
 # cmake -DSANITIZE_ADDRESS=On ..
@@ -90,7 +87,7 @@ To run it:
 ./xmrblocks
 ```
 
-By default it will look for blockchain in its default location i.e., `~/.blurnet/lmdb`.
+By default it will look for blockchain in its default location i.e., `~/.blurry-cash/lmdb`.
 You can use `--bc-path` option if its in different location.
 Example output:
 
@@ -169,9 +166,9 @@ alias xmrblockstestnet='~/onion-monero-blockchain-explorer/build/xmrblocks -t --
 
 These are aliases similar to those used for http://139.162.32.245:8081/ and http://139.162.32.245:8082/, respectively.
 
-## Enable Blur emission
+## Enable Blurrycash emission
 
-Obtaining current Blur emission amount is not straight forward. Thus, by default it is
+Obtaining current Blurrycash emission amount is not straight forward. Thus, by default it is
 disabled. To enable it use `--enable-emission-monitor` flag, e.g.,
 
 
@@ -200,7 +197,7 @@ Every 10000 blocks, the thread will save current emission in a file, by default,
  displayed on the front page, e.g., :
 
 ```
-BLUR emission (fees) is 14485540.430 (52545.373) as of 1313448 block
+BLCH emission (fees) is 14485540.430 (52545.373) as of 1313448 block
 ```
 
 The values given, can be checked using Blur daemon's  `print_coinbase_tx_sum` command.
@@ -742,8 +739,3 @@ Example result not shown.
 Other examples can be found on  [github](https://github.com/moneroexamples?tab=repositories).
 Please know that some of the examples/repositories are not
 finished and may not work as intended.
-
-## How can you help?
-
-Constructive criticism, code and website edits are always good. They can be made through github.
-# blur-explorer
